@@ -1,8 +1,8 @@
 import { Expense } from '../types/app';
 import axios, { AxiosPromise } from 'axios';
+import Constants from 'expo-constants';
 
-const apiURL =
-  'https://react-native-expense-tra-59239-default-rtdb.firebaseio.com';
+const apiURL = (Constants.expoConfig as any).apiURL;
 
 export const postExpense = (
   expense: Omit<Expense, 'id'>
